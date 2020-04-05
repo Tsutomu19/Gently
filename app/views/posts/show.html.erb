@@ -1,0 +1,4 @@
+<%= @post.title %>
+<%= @post.body %>
+<%= link_to "edit", edit_post_path(@post.id) %>
+<%= link_to "destroy", post_path(@post), method: :delete, data: {confirm: "本当に削除してよろしいですか？"} %>
