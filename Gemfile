@@ -64,3 +64,4 @@ gem 'devise'
 gem 'pry-rails'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick", github: 'refile/refile-mini_magick'
+gem "jquery-rails"
