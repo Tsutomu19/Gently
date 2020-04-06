@@ -4,10 +4,15 @@
 <%= @user.introduction %>
 <%= link_to 'edit', edit_user_path(@user) %>
 
-<h3>音声認識</h3>
 
-<button id="btn">音声認識を開始する</button>
-<div id="content"></div>
+<% @favorite_posts.each do |post| %>
+<p><span>ファボした投稿の内容: </span><%= link_to post.body, post_path(post.id) %></p>
+<% end %>
+
+
+<h3>音声認識</h3>
+<button id = "btn">音声認識を開始する</button>
+<div id = "content"></div>
 
 <script>
 
@@ -16,7 +21,7 @@
 
     const speech = new webkitSpeechRecognition();　 //音声認識APIの使用
 
-    speech.lang = "ja";　//言語を日本語に設定
+    speech.lang = "ja";
 
         btn.addEventListener('click' , function() {
             speech.start();

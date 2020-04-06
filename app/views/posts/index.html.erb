@@ -1,5 +1,17 @@
+
 <% @posts.each do |post|%>
-<%= link_to post.user.name, user_path(post.user.id) %>
-<%= link_to post.title, post_path(post.id) %>
-<%= post.body %>
+
+    <%= link_to post.user.name, user_path(post.user.id) %>
+    <%= link_to post.title, post_path(post.id) %>
+    <%= post.body %>
+
+    <% if user_signed_in? %>
+        <% if post.favorited_by?(current_user) %>
+            <p><span>お気に入り解除: </span><%= link_to post.favorites.count, post_favorite_path(post.id), method: :delete %></p>
+        <% else %>
+            <p><span>お気に入り登録: </span><%= link_to post.favorites.count, post_favorite_path(post.id), method: :post %></p>
+        <% end %>
+    <% else %>
+        <p><span>お気に入り数: </span><%= tweet.favorites.count %></p>
+    <% end %>
 <% end %>
