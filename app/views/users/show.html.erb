@@ -1,5 +1,5 @@
 
-<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: 'no-image-mini.jpg' %>
+<%= attachment_image_tag @user, :profile_image, size: "100x100", fallback: 'no-image-mini.jpg' %>
 <%= @user.name %>
 <%= @user.introduction %>
 <%= link_to 'edit', edit_user_path(@user) %>
