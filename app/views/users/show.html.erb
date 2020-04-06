@@ -1,17 +1,35 @@
+
+<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: 'no-image-mini.jpg' %>
 <%= @user.name %>
 <%= @user.introduction %>
 <%= link_to 'edit', edit_user_path(@user) %>
 
-<body>
+<h3>音声認識</h3>
+
+<button id="btn">音声認識を開始する</button>
+<div id="content"></div>
+
+<script>
+
+    const btn = document.getElementById('btn');
+    const content = document.getElementById('content');
+
+    const speech = new webkitSpeechRecognition();　 //音声認識APIの使用
+
+    speech.lang = "ja";　//言語を日本語に設定
+
+        btn.addEventListener('click' , function() {
+            speech.start();
+        });
+
+        speech.addEventListener('result', function(e) {　
+
+        var text = e.results[0][0].transcript;　// 認識された「言葉」を、変数「text」に格納
+
+        content.textContent = text;　// 認識された「言葉(text)」を、表示用のdivタグに代入する
+
+        });
+
+</script>
 
 
-    <h3>Web Speech APIサンプル</h3>
-
-
-    <button id="btn">音声認識開始</button>
-    <div id="content"></div>
-
-    <script src="app.js"></script>
-
-
-</body>
