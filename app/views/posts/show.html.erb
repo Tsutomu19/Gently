@@ -11,9 +11,10 @@
 <% @comments.each do |comment| %>
 <%= comment.user.name %>
 <%= comment.body %>
-    <% if @user.id == current_user.id %><!--idが入らないといけないのに。省略されテイル？@book.id -->
-		<%= link_to "Destroy",post_comment_path(comment.post_id,comment.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} %>
-	<% end %>
+
+<% if comment.user_id == current_user.id %>
+<%= link_to "Destroy",post_comment_path(comment.post_id,comment.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} %>
+<% end %>
 <% end %>
 
 <h3>新規コメント</h3>
