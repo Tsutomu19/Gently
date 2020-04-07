@@ -12,6 +12,8 @@
             <p><span>お気に入り登録: </span><%= link_to post.favorites.count, post_favorite_path(post.id), method: :post %></p>
         <% end %>
     <% else %>
-        <p><span>お気に入り数: </span><%= tweet.favorites.count %></p>
+        <p><span>お気に入り数: </span><%= post.favorites.count %></p>
     <% end %>
+        <p><span>コメント数: </span><%= post.comments.count %></p>
+
 <% end %>

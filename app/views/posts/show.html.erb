@@ -6,3 +6,18 @@
     <%= link_to "edit", edit_post_path(@post.id) %>
     <%= link_to "destroy", post_path(@post), method: :delete, data: {confirm: "本当に削除してよろしいですか？"} %>
 <% end %>
+
+<h3>この本に対してのコメント一覧</h3>
+<% @comments.each do |comment| %>
+<%= comment.user.name %>
+<%= comment.body %>
+    <% if @user.id == current_user.id %><!--idが入らないといけないのに。省略されテイル？@book.id -->
+		<%= link_to "Destroy",post_comment_path(comment.post_id,comment.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} %>
+	<% end %>
+<% end %>
+
+<h3>新規コメント</h3>
+<%= form_for [@post, @comment] do |f| %>
+	<%= f.text_area :body, rows:'5',placeholder: "コメントをここに" %>
+	<%= f.submit "送信" %>
+<% end %>
