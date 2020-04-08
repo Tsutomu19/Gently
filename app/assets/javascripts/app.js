@@ -14,25 +14,22 @@ $(function() {
     });
 
     speech.addEventListener('result', function(e) {　
+        $.ajax({
+            url: '/posts/new',
+            type: 'GET',
+            date: {
+                content: text　　// JSの変数の中のデータをRailsに渡す。変数text
+            },
+        })
 
         var text = e.results[0][0].transcript;　           // 認識された「言葉」を、変数「text」に格納
 
         content.textContent = text;　                      // 認識された「言葉(text)」を、表示用のdivタグに代入する  textContentプロパティはテキスト内容の表示
 
-    });
+        document.getElementById("speech").value = text;     // domを使ってformへ
 
+
+    });
 });
 
-$.ajax({
-    url: '/posts/new',
-    type: 'GET',
-    date: {
-        content: text　　// JSの変数の中のデータをRailsに渡します。変数text
-    },
-})
-.done(function(response){
-    // Railsのアクションが正しく実行された時の処理をかく
-})
-.fail(function(xhr){
-    // Railsのアクションなどでエラーが発生した時の処理
-})
+
