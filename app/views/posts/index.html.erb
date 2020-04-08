@@ -1,19 +1,38 @@
 
-<% @posts.each do |post|%>
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>Title</th>
+            <th>Opinion</th>
+            <th colspan="2"></th>
+        </tr>
+    </thead>
 
-    <%= link_to post.user.name, user_path(post.user.id) %>
-    <%= link_to post.title, post_path(post.id) %>
-    <%= post.body %>
+    <% @posts.each do |post|%>
 
-    <% if user_signed_in? %>
-        <% if post.favorited_by?(current_user) %>
-            <p><span>お気に入り解除: </span><%= link_to post.favorites.count, post_favorite_path(post.id), method: :delete %></p>
-        <% else %>
-            <p><span>お気に入り登録: </span><%= link_to post.favorites.count, post_favorite_path(post.id), method: :post %></p>
-        <% end %>
-    <% else %>
-        <p><span>お気に入り数: </span><%= post.favorites.count %></p>
+    <tbody>
+        <td>
+        <%= link_to post.user.name, user_path(post.user.id) %>
+        </td>
+
+        <td>
+        <%= link_to post.title, post_path(post.id) %>
+        </td>
+
+        <td>
+        <%= post.body %>
+        </td>
+
+        <td id="favorite-<%= post.id %>">
+        <%= render partial: "favorites/favorite", locals: { post: post} %>
+        </td>
+
+        <td>
+        <span>コメント数: </span><%= post.comments.count %>
+        </td>
+    </tbody>
+
     <% end %>
-        <p><span>コメント数: </span><%= post.comments.count %></p>
 
-<% end %>
+</table>
