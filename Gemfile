@@ -65,3 +65,5 @@ gem 'pry-rails'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick", github: 'refile/refile-mini_magick'
 gem "jquery-rails"
+gem 'dotenv-rails'# 環境変数
+gem 'google-cloud-language' # 感情分析

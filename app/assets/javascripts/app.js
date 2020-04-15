@@ -1,7 +1,7 @@
 
 $(function() {
 
-    const btn = document.getElementById('btn');　          //要素を取得
+    const btn = document.getElementById('btn');　          //要素を取得　シングルクォーテーションはnew側のbtnだと思う
     const content = document.getElementById('content');
 
     const speech = new webkitSpeechRecognition();　        //音声認識APIの使用 speechオブジェクトを取得する
