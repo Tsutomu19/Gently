@@ -3,7 +3,7 @@ def add_emoji(score,magnitude)
     emoji_array_positive = ["🙂","🙃","😀","😃","😄","😆","😝","😤","🤩","🥳"]
     emoji_array_negative = ["😐","😕","😟","😓","😔","😖","😫","😢","😭","🤪"]
 
-    select = score*10
+    select = sentiment.score*10
 
     if select <= 0
         @emoji = emoji_array_negative[-1*select.ceil] # 切り上げ

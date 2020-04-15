@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @g = Main.new.sentiment
+    # @g = Main.new.sentiment
     @post = Post.new
     @post.body = (params[:content])
   end
