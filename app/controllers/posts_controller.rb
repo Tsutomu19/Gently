@@ -11,14 +11,17 @@ class PostsController < ApplicationController
   end
 
   def new
-    # @g = Main.new.sentiment
     @post = Post.new
     @post.body = (params[:content])
   end
 
   def create
+    text_sentiment_analysis = TextSentimentAnalysis.new
+    score = text_sentiment_analysis.sentiment_from_text(post_params[:body])
     post = Post.new(post_params)
+    post.score = score
     post.user_id = current_user.id
+
     if post.save
       redirect_to posts_path
     else

@@ -1,0 +1,32 @@
+
+[1mFrom:[0m /vagrant/Gently/lib/text_sentiment_analysis.rb:20 TextSentimentAnalysis#sentiment_from_text:
+
+     [1;34m4[0m: [32mdef[0m [1;34msentiment_from_text[0m(text_content)
+     [1;34m5[0m: 
+     [1;34m6[0m:     language = [1;34;4mGoogle[0m::[1;34;4mCloud[0m::[1;34;4mLanguage[0m.language_service
+     [1;34m7[0m:     document = { [35mcontent[0m: text_content, [35mtype[0m: [33m:PLAIN_TEXT[0m }  [1;34m#contentの変更[0m
+     [1;34m8[0m:     response = language.analyze_sentiment [35mdocument[0m: document
+     [1;34m9[0m:     sentiment = response.document_sentiment                [1;34m#document_sentimentとは[0m
+    [1;34m10[0m: 
+    [1;34m11[0m:     [1;34m# puts "Overall document sentiment: (#{sentiment.score})"[0m
+    [1;34m12[0m:     [1;34m# puts "Sentence level sentiment:"[0m
+    [1;34m13[0m: 
+    [1;34m14[0m:     sentences = response.sentences [1;34m#sentencesとは[0m
+    [1;34m15[0m: 
+    [1;34m16[0m:     sentences.each [32mdo[0m |sentence|
+    [1;34m17[0m:       sentiment = sentence.sentiment
+    [1;34m18[0m:       puts [31m[1;31m"[0m[31m#{sentence.text.content}[0m[31m: (#{sentiment.score}[0m[31m)[1;31m"[0m[31m[0m
+    [1;34m19[0m:     [32mend[0m
+ => [1;34m20[0m:     binding.pry
+    [1;34m21[0m:     [1;34m# emoji_array_positive = ["🙂","🙃","😀","😃","😄","😆","😝","😤","🤩","🥳"][0m
+    [1;34m22[0m:     [1;34m# emoji_array_negative = ["😐","😕","😟","😓","😔","😖","😫","😢","😭","🤪"][0m
+    [1;34m23[0m: 
+    [1;34m24[0m:     [1;34m# select = sentiment.score*10[0m
+    [1;34m25[0m: 
+    [1;34m26[0m:     [1;34m# if select <= 0[0m
+    [1;34m27[0m:     [1;34m#     @emoji = emoji_array_negative[-1*select.ceil] # 切り上げ[0m
+    [1;34m28[0m:     [1;34m# else[0m
+    [1;34m29[0m:     [1;34m#     @emoji = emoji_array_negative[select.floor] # 切り捨て[0m
+    [1;34m30[0m:     [1;34m# end[0m
+    [1;34m31[0m: [32mend[0m
+

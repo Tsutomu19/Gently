@@ -10,5 +10,5 @@ def add_emoji(score,magnitude)
     else
         @emoji = emoji_array_negative[select.floor] # 切り捨て
     end
-    @post.update(:score => emoji)
+    # @post.update(:score => emoji)
 end
