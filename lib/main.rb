@@ -2,8 +2,8 @@ require_relative './text_sentiment_analysis.rb' # 同じ階層にあるのでこ
 require_relative './emoji.rb'
 class Main
     def sentiment
-        sentiment_from_text(params[text_content])
-        # binding.pry
+        # text_content = params[]
+        sentiment_from_text(text_content)
         add_emoji(score,magnitude)
 
     end
