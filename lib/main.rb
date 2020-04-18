@@ -1,4 +1,4 @@
-require_relative './text_sentiment_analysis.rb' # 同じ階層にあるのでこの表記va
+require_relative './text_sentiment_analysis.rb'
 require_relative './emoji.rb'
 class Main
     def sentiment
