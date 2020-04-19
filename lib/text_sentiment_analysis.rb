@@ -24,14 +24,12 @@ class TextSentimentAnalysis
       emoji_array_positive = ["🙂","🙃","😀","😃","😄","😆","😝","😤","🤩","🥳"]
       emoji_array_negative = ["😐","😕","😟","😓","😔","😖","😫","😢","😭","🤪"]
 
-      # score = sentences[0].sentiment.score * 10
-
       if score <= 0
-          emoji_array_negative[-1 * score] # 切り上げ
+          emoji_array_negative[-1 * score] # そのまま返り値に
       else
-          emoji_array_positive[score] # 切り捨て
+          emoji_array_positive[score]
       end
-      # @post.update(:score => emoji)
+
   end
 end
 
