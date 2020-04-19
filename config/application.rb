@@ -14,6 +14,8 @@ module Gently
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.paths.add 'lib', eager_load: true
+    config.time_zone = "Tokyo"
+    config.active_record.default_timezone = :local
     # lib配下のクラス読み込み
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

@@ -22,7 +22,6 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
     post.score = score
     post.user_id = current_user.id
-
     if post.save
       redirect_to post_path(post.id)
     else
@@ -37,6 +36,8 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
+    text_sentiment_analysis = TextSentimentAnalysis.new
+    score = text_sentiment_analysis.sentiment_from_text(post_params[:body])
     if post.update(post_params)
       redirect_to post_path(post)
     else

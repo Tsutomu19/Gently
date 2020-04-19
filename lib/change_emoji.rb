@@ -1,16 +1,15 @@
 class ChangeEmoji
     def get_emoji(score,magnitude)
+# sentencesが何か
+        score = sentences[0].sentiment.score * 10
 
         emoji_array_positive = ["🙂","🙃","😀","😃","😄","😆","😝","😤","🤩","🥳"]
         emoji_array_negative = ["😐","😕","😟","😓","😔","😖","😫","😢","😭","🤪"]
 
-    
-
         if score <= 0
-            emoji = emoji_array_negative[-1 * score.ceil] # 切り上げ
+            emoji_array_negative[-1 * score] # そのまま返り値に
         else
-            emoji = emoji_array_negative[score.floor] # 切り捨て
+            emoji_array_positive[score]
         end
-        # @post.update(:score => emoji)
     end
 end
