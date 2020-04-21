@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ .body-wrap {
+    background: #fff;
+
+    #mv {
+      background-image: image-url("kure.jpg");
+      width: 100%;
+      height: 650px;
+      background-size: cover;
+      background-position: center;
+
+      .key-visual {
+        padding-top: 200px;
+      }
+
+      .catch {
+        color: #fff;
+        font-weight: 1000;
+        // font-family: $home-font;
+      }
+
+      .head-text {
+        color: #fff;
+        font-size: 18px;
+        // font-family: $home-font;
+      }
+
+    }
+ }
+
+/*about*/
+#sv {
+    background-image: image-url("kure.jpg");
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: 90% 15%;
+
+    .about-visual {
+      padding-top: 150px;
+    }
+
+    // .catch {
+    //   color: #fff;
+    //   font-weight: 1000;
+    //   font-family: $home-font;
+    // }
+
+    // .head-text {
+    //   color: #fff;
+    //   font-size: 35px;
+    //   margin: 0;
+    //   font-family: $home-font;
+    // //   text-shadow: 1px 2px 3px #ccc;
+    // }
+
+  }
+
+  .service-content {
+    text-align: center; /*中央寄せ*/
+  }
+
+
+//   .service-content:after{/*疑似要素*/
+//     content: '';
+//     display: block; /*改行するように*/
+//     width: 30px;
+//     height: 2px;
+//     background: $app-color;
+//     margin: 20px auto 0 auto;
+//     box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);
+
+//   }
+  .about-img {
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,.1);
+  }
+
+//   .about-heading{
+//     font-weight: bold;
+//     border-left: 2px solid $app-color;
+//   }
+
+  .about-text {
+    line-height: 200%;
+  }
