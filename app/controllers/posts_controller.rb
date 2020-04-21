@@ -35,9 +35,10 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
     text_sentiment_analysis = TextSentimentAnalysis.new
     score = text_sentiment_analysis.sentiment_from_text(post_params[:body])
+    post = Post.find(params[:id])
+    post.score = score
     if post.update(post_params)
       redirect_to post_path(post)
     else

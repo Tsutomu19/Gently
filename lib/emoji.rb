@@ -1,4 +1,4 @@
-class ChangeEmoji
+class Emoji
     def get_emoji(score,magnitude)
 # sentencesが何か
         score = sentences[0].sentiment.score * 10
