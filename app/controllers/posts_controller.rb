@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @user = User.find(@post.user.id)
     @comments = @post.comments
     @comment = Comment.new
+    @emoji = TextSentimentAnalysis.new.add_emoji(@post.score, 'Magnitude')
   end
 
   def new
@@ -16,10 +17,13 @@ class PostsController < ApplicationController
   end
 
   def create
+    text_sentiment_analysis = TextSentimentAnalysis.new
+    score = text_sentiment_analysis.sentiment_from_text(post_params[:body])
     post = Post.new(post_params)
+    post.score = score
     post.user_id = current_user.id
     if post.save
-      redirect_to posts_path
+      redirect_to post_path(post.id)
     else
       @post = Post.new(post_params)# 直前の編集内容を表示
       render 'new'
@@ -31,7 +35,10 @@ class PostsController < ApplicationController
   end
 
   def update
+    text_sentiment_analysis = TextSentimentAnalysis.new
+    score = text_sentiment_analysis.sentiment_from_text(post_params[:body])
     post = Post.find(params[:id])
+    post.score = score
     if post.update(post_params)
       redirect_to post_path(post)
     else
@@ -50,4 +57,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :body)
     end
+
 end

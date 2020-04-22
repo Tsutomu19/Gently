@@ -5,9 +5,12 @@
 <%= link_to 'edit', edit_user_path(@user) %>
 
 
+
+
+<div class="row justify-content-center record-content py-3 p-md-5">
+  <div class="col-12 px-md-5">
 <% @favorite_posts.each do |post| %>
 <p><span>ファボした投稿の内容: </span><%= link_to post.body, post_path(post.id) %></p>
 <% end %>
-
-
-
+  </div>
+</div>
