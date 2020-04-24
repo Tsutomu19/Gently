@@ -2,43 +2,38 @@
 <html>
   <head>
     <title>Gently</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
   </head>
-  <div id="slidemenu">
-    <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
+<nav class="navbar navbar-expand-md">
+  <div class="container">
+    <% if user_signed_in? %>
+    <a class="navbar-brand" href="/posts">Gently</a>
+    <% else %>
+    <a class="navbar-brand" href="/">Gently</a>
+    <% end %>
+
+  <div class="collapse navbar-collapse" id="navbar-content">
+    <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="">
           <%= link_to '自動音声認識/新規投稿', new_post_path %>
-        </li>
-        <li class="">
           <%= link_to 'ユーザー一覧', users_path %>
-        </li>
-        <li class="">
           <%= link_to '投稿一覧', posts_path %>
-        </li>
-        <li class="">
           <%= link_to 'マイページ', user_path(current_user.id) %>
-        <li class="">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </li>
-        </li>
       <% else %>
-        <li class="">
           <%= link_to "About", homes_about_path %>
-        </li>
-        <li class="">
           <%= link_to "新規登録", new_user_registration_path %>
-        </li>
-        <li class="">
           <%= link_to "ログイン", new_user_session_path %>
-        </li>
       <% end %>
     </ul>
   </div>
+</nav>
   <body>
     <%= yield %>
   </body>

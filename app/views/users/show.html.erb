@@ -1,16 +1,75 @@
 
-<%= attachment_image_tag @user, :profile_image, size: "100x100", fallback: 'no-image-mini.jpg' %>
-<%= @user.name %>
-<%= @user.introduction %>
-<%= link_to 'edit', edit_user_path(@user) %>
 
 
+<div class="row justify-content-center">
+  <div class="col-12 user-content">
+    <div class="row">
+      <div class="col-12 col-md-4 mr-2 mb-3">
+        <div class="row">
+          <div class="col-12 mt-5">
+            <%= attachment_image_tag(@user, :profile_image, size: "100x100", class: "rounded-circle", fallback: 'no-image-mini.jpg',:size =>'150x150') %>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-12 my-3">
+            <div class="row justify-content-center">
+              <h4 class="col-3">name： </h4>
+              <h3 class="col-6 text-center"><%= @user.name %></h3>
+            </div>
+            <div class="row justify-content-center">
+              <h4 class="col-3">introduce： </h4>
+              <h4 class="col-6 text-center"><%= @user.introduction %></h4>
+            </div>
+          </div>
+        </div>
+        <%= link_to "編集する", edit_user_path(@user.id), class: "btn btn-outline-info btn-lg mt-3" %>
+      </div>
 
-
-<div class="row justify-content-center record-content py-3 p-md-5">
-  <div class="col-12 px-md-5">
-<% @favorite_posts.each do |post| %>
-<p><span>ファボした投稿の内容: </span><%= link_to post.body, post_path(post.id) %></p>
-<% end %>
+      <div class="col-12 col-md-7 user-info">
+        <div class="row">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th>いいね数</th>
+              <td><%= @favorites.count %></td>
+            </tr>
+            <tr>
+              <th>コメント数</th>
+              <td><%= @comments.count %></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="row">
+          <div class="row align-items-center my-3">
+            <div class="col-md-7">
+              <h3 class="my-4">投稿一覧</h3>
+            </div>
+            <div class="col-md-5">
+              <%= link_to "新規投稿する", new_post_path, class:"btn btn-info btn-md" %>
+            </div>
+          </div>
+          <% @posts.each do |post| %>
+            <div class="col-12 mb-4">
+              <div class="row align-items-center  justify-content-center">
+                <div class="col-3 col-md-1 mr-md-3">
+                  <%# <%= attachment_image_tag(pet, :pet_image, :fill, 120, 120, format: 'jpeg', class: "rounded-circle", fallback: "no_image_pet.svg",:size =>'50x50') %>
+                </div>
+                <div class="col-6 col-md-3">
+                  <h5 class="text-center"><%= post.title %></h5>
+                </div>
+                <div class="col-6 col-md-3">
+                  <h5 class="text-center"><%= post.body %></h5>
+                </div>
+                <div class="col-md-6 mt-2 mt-md-0">
+                  <%= link_to "編集", edit_post_path(post.id), class: "btn btn-outline-info mr-3"%>
+                  <%= link_to "削除", post_path(post.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-outline-danger"%>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

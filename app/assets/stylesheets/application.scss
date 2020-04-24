@@ -15,6 +15,7 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome";
 
  .body-wrap {
     background: #fff;
@@ -44,6 +45,12 @@
 
     }
  }
+
+ /*ヘッダー*/
+header {
+
+
+}
 
 /*about*/
 #sv {
@@ -100,3 +107,46 @@
   .about-text {
     line-height: 200%;
   }
+
+/*認証*/
+.form-content{
+  padding: 50px 0;
+
+  .auth-form {
+    box-shadow: 0 20px 40px 0 rgba(0,0,0,.5);
+    background-color: white;
+    border-radius: 5px;
+    padding: 60px 0;
+    text-align: center;
+
+    .form-title {
+      color: $auth;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .form-btn {
+      @include circ-button;
+      background-color: $auth;
+      margin-top: 20px;
+
+      &:hover {
+        background-color: $auth-action;
+      }
+    }
+  }
+}
+
+
+/* ---- user ----- */
+/*-- show --*/
+.user-content {
+  // @include box;
+  padding: 50px;
+
+  .user-info {
+    // @include box;
+    padding: 50px;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);
+  }
+}
