@@ -1,21 +1,40 @@
-<h1>新規投稿</h1>
 
-<h3>音声認識</h3>
-<button id = "btn">音声認識を開始する</button>
-<h4>話した内容</h4>
-<div id = "content"></div>
-<script></script>
+<div class="row align-items-center justify-content-center">
+  <div class="col-10 col-md-8 pet-form">
+    <div class="row text-right mt-4">
+      <div class="col-12">
+    <div class="row justify-content-center form-area">
+      <div class="col-md-8">
+        <h1 class="form-title">新規投稿</h1>
+
+        <h3>音声認識</h3>
+        <button id = "btn">音声認識を開始する</button>
+        <h4>話した内容</h4>
+        <div id = "content"></div>
+        <script></script>
 
 
-<%= form_for(@post) do |f| %>
+        <%= form_for(@post) do |f| %>
 
-    <h4>タイトル</h4>
-    <%= f.text_field :title %>
+            <div class="form-group">
+              <div class="field pb-3">
+            <h4>タイトル</h4>
+            <%= f.text_field :title %>
+              </div>
+            </div>
 
-    <h4>本文</h4>
-    <%= f.text_area :body,id: "speech" %>
+            <div class="field pb-3">
+            <h4>本文</h4>
+            <%= f.text_area :body,id: "speech" %>
+            </div>
+            <div class="field">
+            <%= f.submit '投稿', class:"btn btn-lg btn-pet"  %>
+            </div>
 
-    <%= f.submit '投稿' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<% end %>
 

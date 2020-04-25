@@ -188,6 +188,37 @@ header {
   }
 }
 
+.pet-form {
+  @include box;
+
+  .btn-close {
+    @include close-button
+  }
+
+  .form-area{
+    padding: 50px 20px;
+  }
+
+  .form-title {
+    color: $pet;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+
+  .btn-pet {
+    @include circ-button;
+    background-color: $pet;
+    margin-top: 30px;
+
+    &:hover {
+      background-color: transparent;
+      border: 2px solid $pet;
+      color: $pet;
+    }
+  }
+}
+
+
 
 /* ---- user ----- */
 /*-- show --*/
