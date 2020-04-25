@@ -5,12 +5,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # @posts = @user.posts
-    @favorite_posts = @user.favorite_posts
+    @posts = Post.where(user_id: current_user.id)
+    @favorites = Comment.where(user_id: current_user.id)
+    @comments = Comment.where(user_id: current_user.id)
   end
 
   def edit
-    # binding.pry
     @user = User.find(params[:id])
   end
 

@@ -15,6 +15,60 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome";
+
+
+$main-color: rgb(240,240,240);
+$app-color: #8dc9b4;/*#ACDBC9*/
+$font-color: #333;
+$auth: #333;/*7EA6E0*/
+$auth-action: #76b0bd;/*#A9C4EB*/
+$pet: #f3a9a9;
+$reco: #FFA530;
+$reco-action: #F9BE78;
+$topic: #f6ae5f;
+$topic-action: #f3bc80;
+
+$ja-font: 'M PLUS Rounded 1c', sans-serif;
+$home-font: 'inherit','helvetica',sans-serif;
+
+@mixin button {
+  border: none;
+  color: #fff;
+  padding: 14px 48px;
+}
+
+@mixin circ-button {
+  @include button;
+  border-radius: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+@mixin sq-button {
+  @include button;
+  border-radius: 3px;
+}
+
+@mixin close-button {
+  color:grey;
+    &:hover {
+    color:#555;
+    }
+  }
+
+@mixin box {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,.1);
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+  margin: 20px 0;
+  min-height: 600px;
+}
+
 
  .body-wrap {
     background: #fff;
@@ -44,6 +98,12 @@
 
     }
  }
+
+ /*ヘッダー*/
+header {
+
+
+}
 
 /*about*/
 #sv {
@@ -100,3 +160,75 @@
   .about-text {
     line-height: 200%;
   }
+
+/*認証*/
+.form-content{
+  padding: 50px 0;
+
+  .auth-form {
+    background-color: white;
+    border-radius: 5px;
+    padding: 60px 0;
+    text-align: center;
+
+    .form-title {
+      color: $auth;
+      margin-bottom: 30px;
+    }
+
+    .form-btn {
+      @include circ-button;
+      background-color: $auth;
+      margin-top: 20px;
+
+      &:hover {
+        background-color: $auth-action;
+      }
+    }
+  }
+}
+
+.pet-form {
+  @include box;
+
+  .btn-close {
+    @include close-button
+  }
+
+  .form-area{
+    padding: 50px 20px;
+  }
+
+  .form-title {
+    color: $pet;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+
+  .btn-pet {
+    @include circ-button;
+    background-color: $pet;
+    margin-top: 30px;
+
+    &:hover {
+      background-color: transparent;
+      border: 2px solid $pet;
+      color: $pet;
+    }
+  }
+}
+
+
+
+/* ---- user ----- */
+/*-- show --*/
+.user-content {
+  // @include box;
+  padding: 50px;
+
+  .user-info {
+    // @include box;
+    padding: 50px;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);
+  }
+}
