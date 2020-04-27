@@ -70,5 +70,5 @@ gem 'google-cloud-language' # 感情分析
 group :production do
   gem 'mysql2'
 end
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'font-awesome-sass', '~> 5.12.0'
