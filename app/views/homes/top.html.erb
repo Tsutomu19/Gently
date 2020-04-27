@@ -11,17 +11,16 @@
   </head>
 
   <body class="body-wrap">
-    <%# <%= render 'header' %>
 
   <main>
     <section id="mv">
     <!--<div class= "jumbotron">-->
       <div class= "container key-visual">
-        <h1 class= "display-4 catch">Feel happy and comfortable</h1>
+        <h1 class= "display-4 catch">Gently</h1>
         <p class="my-4 head-text">
-          話し合いをするすべての方へ<br>
-          何かより良い話し合いの方法がないか。<br>
-          そんな思いを込めたアプリです
+          自己表現が苦手..そう感じる人々へ<br>
+          普段どんな言葉を使っていますか？<br>
+          手軽にあなたの感情を分析できるアプリケーションです。
         </p>
         <%= link_to 'SignUpはこちら', new_user_registration_path, class: "btn btn-info btn-lg" %>
       </div>
@@ -33,35 +32,32 @@
       </div>
       <div class="row py-2">
         <div class="col-sm-12 col-md-4 text-center py-5">
-          <%= image_tag '1.jpg', class: "rounded-circle mb-3", size: '200x200' %>
+          <%= image_tag '1boy.jpg', size: '250x250' %>
           <h2 class="my-4">Record</h2>
           <p>話すだけ<br>
             ボタン一つでいつでも簡単に<br>
-            議事録をとる事ができます
+            始める事ができます。
           </p>
         </div>
         <div class="col-sm-12 col-md-4 text-center py-5">
-          <%= image_tag '2.jpg', class: "rounded-circle mb-3", size: '200x200' %>
+          <%= image_tag 'egg.jpg', size: '250x250' %>
           <h2 class="my-4">Sentiment</h2>
-          <p>感情を見る<br>
-            手を使わず、音声入力されるから<br>
-            会話に集中出来ます。
+          <p>感情を見よう<br>
+            あなたの言葉を分析します。<br>
+            どんな感情になっているでしょうか？
           </p>
         </div>
         <div class="col-sm-12 col-md-4 text-center py-5">
-          <%= image_tag '3.jpg', class: "rounded-circle mb-3", size: '200x200' %>
-          <h2 class="my-4">Board</h2>
-          <p>パートナー、家族との会話で<br>
-            悩んだときは<br>
-            掲示板で仲間と気軽に意見交換をしましょう
+          <%= image_tag 'pc.jpg', size: '250x250' %> <h2 class="my-4">Board</h2>
+          <p>共有しよう<br>
+            自分の分析結果を<br>
+            掲示板で意見交換してみましょう。
           </p>
         </div>
       </div>
       <div class="row justify-content-center pt-3 pb-5">
-      <%# <%= link_to 'もっと詳しく »', homes_about_path, class: "btn btn-outline-info btn-lg" %>
       </div>
     </div>
   </main>
-  <%# <%= render 'footer' %>
   </body>
 </html>
