@@ -10,29 +10,33 @@
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
   </head>
-<nav class="navbar navbar-expand-md">
-  <div class="container">
-    <% if user_signed_in? %>
-    <a class="navbar-brand" href="/posts">Gently</a>
-    <% else %>
-    <a class="navbar-brand" href="/">Gently</a>
-    <% end %>
 
-  <div class="collapse navbar-collapse" id="navbar-content">
-    <ul class="navbar-nav mr-auto">
+
+<nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
+      <span class="sr-only">メニュー</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+ 
+  <div id="gnavi" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
       <% if user_signed_in? %>
-          <%= link_to '自動音声認識/新規投稿', new_post_path %>
-          <%= link_to 'ユーザー一覧', users_path %>
-          <%= link_to '投稿一覧', posts_path %>
-          <%= link_to 'マイページ', user_path(current_user.id) %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <li><%= link_to '自動音声認識/新規投稿', new_post_path %></li>
+      <li><%= link_to 'ユーザー一覧', users_path %></li>
+      <li><%= link_to '投稿一覧', posts_path %></li>
+      <li><%= link_to 'マイページ', user_path(current_user.id) %></li>
+      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       <% else %>
-          <%= link_to "About", homes_about_path %>
-          <%= link_to "新規登録", new_user_registration_path %>
-          <%= link_to "ログイン", new_user_session_path %>
+      <li><%= link_to "About", homes_about_path %></li>
+      <li><%= link_to "新規登録", new_user_registration_path %></li>
+      <li><%= link_to "ログイン", new_user_session_path %></li>
       <% end %>
-    </ul>
-  </div>
+    </ul>
+  </div>
 </nav>
   <body>
     <%= yield %>

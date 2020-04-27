@@ -19,10 +19,10 @@
 
 
 $main-color: rgb(240,240,240);
-$app-color: #8dc9b4;/*#ACDBC9*/
+$app-color: #9e9e9e;/*#ACDBC9*/
 $font-color: #333;
 $auth: #333;/*7EA6E0*/
-$auth-action: #76b0bd;/*#A9C4EB*/
+$auth-action: #333;/*#A9C4EB*/
 $pet: #f3a9a9;
 $reco: #FFA530;
 $reco-action: #F9BE78;
@@ -54,9 +54,9 @@ $home-font: 'inherit','helvetica',sans-serif;
 }
 
 @mixin close-button {
-  color:grey;
+  color:rgb(216, 215, 215);
     &:hover {
-    color:#555;
+    color:rgb(219, 216, 216);
     }
   }
 
@@ -74,7 +74,7 @@ $home-font: 'inherit','helvetica',sans-serif;
     background: #fff;
 
     #mv {
-      background-image: image-url("kure.jpg");
+      background-image: image-url("2talkgirl.jpg");
       width: 100%;
       height: 650px;
       background-size: cover;
