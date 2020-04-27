@@ -1,4 +1,40 @@
-<% @users.each do |user| %>
-<%= user.name %>
-<%= link_to "show", user_path(user.id) %>
+
+<section id="ui">
+      <div class= "container about-visual">
+      </div>
+    </section>
+    <div class="container py-5">
+      <div class="row justify-content-center py-5">
+        <h1 class="service-content">ユーザー一覧</h1>
+      </div>
+  </main>
+
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>show</th>
+            <th colspan="2"></th>
+        </tr>
+    </thead>
+    <% @users.each do |user| %>
+    <tbody>
+    <td>
+    <%= user.name %>
+    </td>
+
+    <td>
+    <%= link_to "show", user_path(user.id) %>
+    </td>
+
+    <td>
+    </td>
+    </td>
+
+    <td>
+    </td>
+    </tbody>
 <% end %>
+
+
+</table>
