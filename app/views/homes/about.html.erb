@@ -11,15 +11,9 @@
   </head>
 
   <body class="body-wrap">
-    <%# <%= render 'header' %> %>
-
   <main>
     <section id="sv">
       <div class= "container about-visual">
-        <h1 class= "catch">About Gently</h1>
-        <h3 class="head-text">
-          - Gentlyとは
-        </h3>
       </div>
     </section>
     <div class="container py-5">
@@ -28,50 +22,20 @@
       </div>
       <div class="row align-items-center py-3">
         <div class="col-12 col-md-6 text-center">
-          <%= image_tag '1.jpg', class: "rounded about-img", size: '350x250' %>
+          <%# <%= image_tag '2talk.jpg', class: "rounded about-img", size: '350x250' %>
         </div>
         <div class="col-12 col-md-6 mt-3">
-          <h2 class="about-heading my-4 pl-4">Record</h2>
+          <%# <h2 class="about-heading my-4 pl-4">Record</h2> %>
           <p class="about-text">
-            ペットを病院に連れて行ったとき、医師からの質問に対して記憶を辿って答えることはありませんか？<br>
-            正しい症状を素早く伝えることは、病院での滞在時間縮小や、的確な治療を受けることにつながります。<br>
-            カレンダー形式で365日の記録をいつでも入力、何度でも編集できます。<br>
-            スマートフォンさえあればどこでもで確認可能です。
-          </p>
-        </div>
-      </div>
-      <div class="row align-items-center py-5">
-        <div class="col-12 col-md-6 text-center">
-          <%= image_tag '2.jpg', class: "rounded about-img", size: '350x250' %>
-        </div>
-        <div class="col-12 col-md-6 mt-3">
-          <h2 class="about-heading my-4 pl-4">Stock</h2>
-          <p class="about-text">
-            定期的に購入するペット用品がいくつもあると、気付いていたらストックが切れていたという場合があります。<br>
-            そんな状態を防止するために、管理機能をつけました。<br>
-            登録はいたって簡単で、商品名、何日もつのか、残量を入力するだけ。<br>
-            買い物に行ったときにアプリで残量を確認すれば買い漏れや買いすぎがなくなります。
-          </p>
-        </div>
-      </div>
-      <div class="row align-items-center py-3">
-        <div class="col-12 col-md-6 text-center">
-          <%= image_tag '3.jpg', class: "rounded about-img", size: '350x250' %>
-        </div>
-        <div class="col-12 col-md-6 mt-3">
-          <h2 class="about-heading my-4 pl-4">Board</h2>
-          <p class="about-text">
-            病気やケガ、ペットを飼い始めたばかりで不安に思うこと...<br>
-            ペットを飼っていると多種多様な悩みが生まれます。<br>
-            同じ状況の体験談をネット検索しても情報がヒットしないことも多々。<br>
-            掲示板機能を使えば、ペットを飼う人達で気軽に相談ができます。<br>
-            困ったときは仲間と情報交換をしましょう！<br>
-            ※ 会員登録無しで掲示板の閲覧はできますが、投稿はできません。
+            喋った内容を自動テキスト化し、そのテキストから感情分析が出来るアプリケーションです。<br>
+            アプリ内にある『音声聞き取りを開始』ボタンを押すと、<br>
+            喋った内容を自動テキスト化することが出来ます。<br>
+            また、テキストから感情分析を行いスコアに応じて絵文字を出力します。<br>
+            さらに、テキストをアプリケーションに投稿することによって他ユーザーからいいね、コメントを貰うことが出来ます。<br>
           </p>
         </div>
       </div>
     </div>
   </main>
-  <%# <%= render 'footer' %> %>
   </body>
 </html>
