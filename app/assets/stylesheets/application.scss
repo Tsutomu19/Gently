@@ -100,10 +100,17 @@ $home-font: 'inherit','helvetica',sans-serif;
  }
 
  /*ヘッダー*/
-header {
-
-
+ .navbar-toggle {
+  text-align: center;
+  margin: -15px 0;
+  border: none;
+  .icon-bar {
+            margin: -15px 0;
+            width:50px;
+            height:1px;
+      }
 }
+
 
 /*about*/
 #sv {
