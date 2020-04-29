@@ -1,6 +1,8 @@
 
-
-
+ <section id="us">
+      <div class= "container about-visual">
+      </div>
+    </section>
 <div class="row justify-content-center">
   <div class="col-12 user-content">
     <div class="row">
@@ -20,26 +22,20 @@
               <h4 class="col-3">introduce： </h4>
               <h4 class="col-6 text-center"><%= @user.introduction %></h4>
             </div>
+            <div class="row justify-content-center">
+              <h4 class="col-3">いいね数： </h4>
+              <h4 class="col-6 text-center"><%= @favorites.count %></h4>
+            </div>
+            <div class="row justify-content-center">
+              <h4 class="col-3">コメント数： </h4>
+              <h4 class="col-6 text-center"><%= @comments.count %></h4>
+            </div>
           </div>
         </div>
         <%= link_to "編集する", edit_user_path(@user.id), class: "btn btn-outline-info btn-lg mt-3" %>
       </div>
 
       <div class="col-12 col-md-7 user-info">
-        <div class="row">
-        <table class="table">
-          <tbody>
-            <tr>
-              <th>いいね数</th>
-              <td><%= @favorites.count %></td>
-            </tr>
-            <tr>
-              <th>コメント数</th>
-              <td><%= @comments.count %></td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
         <div class="row">
           <div class="row align-items-center my-3">
             <div class="col-md-7">

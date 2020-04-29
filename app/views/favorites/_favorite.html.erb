@@ -1,10 +1,12 @@
 <% if user_signed_in? %>
     <% if post.favorited_by?(current_user) %>
-        <td><span>お気に入り解除: </span><%= link_to post.favorites.count, post_favorite_path(post.id), method: :delete, remote: true %></td>
+        <td><span></span><%= link_to post.favorites.count, post_favorite_path(post.id), method: :delete, class: 'glyphicon glyphicon-heart aria-hidden="true', remote: true %></td>
     <% else %>
-        <p><span>お気に入り登録: </span><%= link_to post.favorites.count, post_favorite_path(post.id), method: :post, remote: true %></p>
+        <p><span></span><%= link_to post.favorites.count, post_favorite_path(post.id), method: :post, class: 'glyphicon glyphicon-heart-empty aria-hidden="true', remote: true %></p>
     <% end %>
 <% else %>
     <p><span>お気に入り数: </span><%= post.favorites.count %></p>
 <% end %>
 </div>
+
+

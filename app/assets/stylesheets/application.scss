@@ -23,7 +23,7 @@ $app-color: #9e9e9e;/*#ACDBC9*/
 $font-color: #333;
 $auth: #333;/*7EA6E0*/
 $auth-action: #333;/*#A9C4EB*/
-$pet: #f3a9a9;
+$pet: #333;
 $reco: #FFA530;
 $reco-action: #F9BE78;
 $topic: #f6ae5f;
@@ -230,7 +230,7 @@ $home-font: 'inherit','helvetica',sans-serif;
 /* ---- user ----- */
 /*-- index--*/
 #ui {
-  background-image: image-url("book.jpg");
+  background-image: image-url("users.jpg");
   width: 100%;
   height: 450px;
   background-size: cover;
@@ -258,13 +258,23 @@ $home-font: 'inherit','helvetica',sans-serif;
 
 /*-- show --*/
 .user-content {
-  // @include box;
+  @include box;
   padding: 50px;
 
   .user-info {
-    // @include box;
+    @include box;
     padding: 50px;
-    box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);
+  }
+}
+#us {
+  background-image: image-url("profile.jpg");
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: 90% 15%;
+
+  .about-visual {
+    padding-top: 150px;
   }
 }
 
@@ -282,17 +292,102 @@ $home-font: 'inherit','helvetica',sans-serif;
   }
 
   // .catch {
-  //   color: #fff;
-  //   font-weight: 1000;
-  //   font-family: $home-font;
-  // }
+    //   color: #fff;
+    //   font-weight: 1000;
+    //   font-family: $home-font;
+    // }
+    // .head-text {
+      //   color: #fff;
+      //   font-size: 35px;
+      //   margin: 0;
+      //   font-family: $home-font;
+      // //   text-shadow: 1px 2px 3px #ccc;
+      // }
 
-  // .head-text {
-  //   color: #fff;
-  //   font-size: 35px;
-  //   margin: 0;
-  //   font-family: $home-font;
-  // //   text-shadow: 1px 2px 3px #ccc;
-  // }
+    }
+/*-- new--*/
+#pv {
+  background-image: image-url("new.jpg");
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: 90% 15%;
 
+  .about-visual {
+    padding-top: 150px;
+  }
+}
+
+.pet-form {
+  @include box;
+
+  .btn-close {
+    @include close-button
+  }
+
+  .form-area{
+    padding: 50px 20px;
+  }
+
+  .form-title {
+    color: $pet;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+
+  .btn-pet {
+    @include circ-button;
+    background-color: $pet;
+    margin-top: 30px;
+
+    &:hover {
+      background-color: transparent;
+      border: 2px solid $pet;
+      color: $pet;
+    }
+  }
+}
+
+#ps {
+  background-image: image-url("show.jpg");
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: 90% 15%;
+  
+  .about-visual {
+    padding-top: 150px;
+      
+  }
+}
+
+.pet-form {
+  @include box;
+
+  .btn-close {
+    @include close-button
+  }
+
+  .form-area{
+    padding: 50px 20px;
+  }
+
+  .form-title {
+    color: $pet;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+ 
+
+  .btn-pet {
+    @include circ-button;
+    background-color: $pet;
+    margin-top: 30px;
+
+    &:hover {
+      background-color: transparent;
+      border: 2px solid $pet;
+      color: $pet;
+    }
+  }
 }

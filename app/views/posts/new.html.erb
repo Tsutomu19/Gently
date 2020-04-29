@@ -1,13 +1,21 @@
 
-<div class="row align-items-center justify-content-center">
-  <div class="col-10 col-md-8 pet-form">
-    <div class="row text-right mt-4">
-      <div class="col-12">
-    <div class="row justify-content-center form-area">
-      <div class="col-md-8">
-        <h1 class="form-title">新規投稿</h1>
-
-        <h3>音声認識</h3>
+<body class="body-wrap">
+  <main>
+    <section id="pv">
+      <div class= "container about-visual">
+      </div>
+    </section>
+    <div class="container py-5">
+      <div class="row justify-content-center py-5">
+        <h1 class="service-content">自動音声認識/新規投稿</h1>
+      </div>
+      <div class="row align-items-center py-3">
+        <div class="col-12 col-md-6 text-center">
+          <%= image_tag 'maiku.jpg', class: "rounded about-img", size: '350x250' %>
+        </div>
+        <div class="col-12 col-md-6 mt-3">
+          <%# <h2 class="about-heading my-4 pl-4">Record</h2> %>
+        <h3></h3>
         <button id = "btn">音声認識を開始する</button>
         <h4>話した内容</h4>
         <div id = "content"></div>
@@ -32,9 +40,10 @@
             </div>
 
         <% end %>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </main>
+  </body>
 
 
