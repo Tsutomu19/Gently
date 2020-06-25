@@ -13,7 +13,7 @@
         <div class="col-12 col-md-12 text-center">
           <h1><%= @emoji %></h1>
                 <%= @post.body %>
-                <% if @user.id == current_user.id %>　<%# postsContorollerのshowAction %>
+                <% if @user.id == current_user.id %>　
                     <%= link_to "edit", edit_post_path(@post.id) %>
                     <%= link_to "destroy", post_path(@post), method: :delete, data: {confirm: "本当に削除してよろしいですか？"} %>
                 <% end %>
