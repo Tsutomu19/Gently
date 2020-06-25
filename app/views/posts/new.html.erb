@@ -13,33 +13,28 @@
         <div class="col-12 col-md-6 text-center">
           <%= image_tag 'maiku.jpg', class: "rounded about-img", size: '350x250' %>
         </div>
-        <div class="col-12 col-md-6 mt-3">
-          <%# <h2 class="about-heading my-4 pl-4">Record</h2> %>
-        <h3></h3>
-        <button id = "btn">音声認識を開始する</button>
-        <h4>話した内容</h4>
-        <div id = "content"></div>
-        <script></script>
+        <div class="col-12 col-md-6 text-center">
+              <%# <h2 class="about-heading my-4 pl-4">Record</h2> %>
+            <h3></h3>
+            <button id = "btn">音声認識を開始する</button>
+            <h4>話した内容</h4>
+            <div id = "content"></div>
+            <script></script>
 
 
-        <%= form_for(@post) do |f| %>
+            <%= form_for(@post) do |f| %>
 
-            <div class="form-group">
-              <div class="field pb-3">
-            <h4>タイトル</h4>
-            <%= f.text_field :title %>
-              </div>
-            </div>
+                <div class="col-12 col-md-6 mt-3">
+                <h4>タイトル</h4>
+                <%= f.text_field :title %>
 
-            <div class="field pb-3">
-            <h4>本文</h4>
-            <%= f.text_area :body,id: "speech" %>
-            </div>
-            <div class="field">
-            <%= f.submit '投稿', class:"btn btn-lg btn-pet"  %>
-            </div>
+                <h4>本文</h4>
+                <%= f.text_area :body,id: "speech" %>
+                <div class="field">
+                <%= f.submit '投稿', class:"btn btn-lg btn-pet"  %>
+                </div>
 
-        <% end %>
+            <% end %>
         </div>
       </div>
     </div>
