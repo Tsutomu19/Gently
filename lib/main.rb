@@ -10,4 +10,3 @@ class Main
 end
 
 
-# コントローラーで呼ぶ
