@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
 
-  before_action :set_variables # 非同期いいね、名称変更しない
+  before_action :set_variables
 
   def create
     favorite = current_user.favorites.build(post_id: params[:post_id])
