@@ -16,7 +16,6 @@ class TextSentimentAnalysis
       end
 
       score = sentences[0].sentiment.score * 10
-      # sentencesをbinding.pryで確認。配列の中の0番目、sentimentのスコア
   end
 
   def add_emoji(score,magnitude)
@@ -25,7 +24,7 @@ class TextSentimentAnalysis
       emoji_array_negative = ["😐","😕","😟","😓","😔","😖","😫","😢","😭","🤪"]
 
       if score <= 0
-          emoji_array_negative[-1 * score] # そのまま返り値に
+          emoji_array_negative[-1 * score]
       else
           emoji_array_positive[score]
       end
@@ -33,6 +32,4 @@ class TextSentimentAnalysis
   end
 end
 
-
-  # インスタンスメソッドを使っている。　クラスをインスタンス化
 
