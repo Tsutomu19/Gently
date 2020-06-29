@@ -2,42 +2,40 @@
 <body class="body-wrap">
   <main>
     <section id="pv">
-      <div class= "container about-visual">
-      </div>
+      <div class= "container about-visual"></div>
     </section>
+
     <div class="container py-5">
       <div class="row justify-content-center py-5">
         <h1 class="service-content">自動音声認識/新規投稿</h1>
       </div>
+
       <div class="row align-items-center py-3">
         <div class="col-12 col-md-6 text-center">
           <%= image_tag 'maiku.jpg', class: "rounded about-img", size: '350x250' %>
         </div>
+
         <div class="col-12 col-md-6 text-center">
-            <h3></h3>
-            <button id = "btn">音声認識を開始する</button>
-            <h4>話した内容</h4>
+          <button id = "btn">音声認識を開始する</button>
+          <h4>話した内容</h4>
             <div id = "content"></div>
-            <script></script>
-
-
+            
             <%= form_for(@post) do |f| %>
-
-                <div class="col-12 col-md-6 mt-3">
-                <h4>タイトル</h4>
+            <div class="col-12 col-md-6 mt-3">
+              <h4>タイトル</h4>
                 <%= f.text_field :title %>
-
-                <h4>本文</h4>
+              <h4>本文</h4>
                 <%= f.text_area :body,id: "speech" %>
-                <div class="field">
-                <%= f.submit '投稿', class:"btn btn-lg btn-maiku"  %>
-                </div>
-
+              <div class="field">
+                <%= f.submit '投稿', class:"btn btn-lg btn-maiku" %>
+              </div>
+            </div>
             <% end %>
+
         </div>
       </div>
     </div>
   </main>
-  </body>
+</body>
 
 
