@@ -1,40 +1,28 @@
 
 <section id="ui">
-      <div class= "container about-visual">
-      </div>
-    </section>
-    <div class="container py-5">
-      <div class="row justify-content-center py-5">
-        <h1 class="service-content">ユーザー一覧</h1>
-      </div>
-  </main>
+  <div class= "container about-visual"></div>
+</section>
+
+<div class="container py-5">
+  <div class="row justify-content-center py-5">
+    <h1 class="service-content">ユーザー一覧</h1>
+  </div>
+</div>
 
 <table>
-    <thead>
-        <tr>
-            <th>name</th>
-            <th>show</th>
-            <th colspan="2"></th>
-        </tr>
-    </thead>
-    <% @users.each do |user| %>
-    <tbody>
-    <td>
-    <%= user.name %>
-    </td>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>show</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
 
-    <td>
-    <%= link_to "show", user_path(user.id) %>
-    </td>
-
-    <td>
-    </td>
-    </td>
-
-    <td>
-    </td>
-    </tbody>
-<% end %>
-
-
+  <% @users.each do |user| %>
+  <tbody>
+    <td><%= user.name %></td>
+    <td><%= link_to "show", user_path(user.id) %></td>
+    <td></td>
+  </tbody>
+  <% end %>
 </table>
