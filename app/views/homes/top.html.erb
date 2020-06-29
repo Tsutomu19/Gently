@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Gently</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
@@ -12,56 +13,56 @@
 
   <body class="body-wrap">
 
-  <main>
-    <section id="mv">
-    <!--<div class= "jumbotron">-->
-      <div class= "container key-visual">
-        <h1 class= "display-4 catch">Gently</h1>
-        <p class="my-4 head-text">
-          自己表現が苦手..そう感じる人々へ<br>
-          普段どんな言葉を使っていますか？<br>
-          手軽にあなたの感情を分析できるアプリケーションです。
-        </p>
-        <%= link_to '新規登録はこちら', new_user_registration_path, class: "btn btn-info btn-lg" %>
-      </div>
-    <!--</div>-->
-    </section>
-    <div class="container py-5">
-      <div class="row justify-content-center py-5">
-        <h1 class="service-content"></h1>
-      </div>
+    <main>
+      <section id="mv">
+        <div class= "container key-visual">
+          <h1 class= "display-4 catch">Gently</h1>
+          <p class="my-4 head-text">
+            自己表現が苦手..そう感じる人々へ<br>
+            普段どんな言葉を使っていますか？<br>
+            手軽にあなたの感情を分析できるアプリケーションです。
+          </p>
+          <%= link_to '新規登録はこちら', new_user_registration_path, class: "btn btn-info btn-lg" %>
+        </div>
+      </section>
       
-      <div class="row py-2">
-        <div class="col-sm-12 col-md-4 text-center py-5">
-          <%= image_tag '1boy.jpg', size: '250x250' %>
-          <h2 class="my-4">Record</h2>
-          <p>話すだけ<br>
-            ボタン一つでいつでも簡単に<br>
-            始める事ができます。
-          </p>
+      <div class="container py-5">
+        <div class="row justify-content-center py-5">
+          <h1 class="service-content"></h1>
         </div>
 
-        <div class="col-sm-12 col-md-4 text-center py-5">
-          <%= image_tag 'egg.jpg', size: '250x250' %>
-          <h2 class="my-4">Sentiment</h2>
-          <p>感情を見よう<br>
-            あなたの言葉を分析します。<br>
-            どんな感情になっているでしょうか？
-          </p>
-        </div>
+        <div class="row py-2">
 
-        <div class="col-sm-12 col-md-4 text-center py-5">
-          <%= image_tag 'pc.jpg', size: '250x250' %> <h2 class="my-4">Board</h2>
-          <p>共有しよう<br>
-            自分の分析結果を<br>
-            掲示板で意見交換してみましょう。
-          </p>
-        </div>
+          <div class="col-sm-12 col-md-4 text-center py-5">
+            <%= image_tag '1boy.jpg', size: '250x250' %>
+            <h2 class="my-4">Record</h2>
+            <p>話すだけ<br>
+              ボタン一つでいつでも簡単に<br>
+              始める事ができます。
+            </p>
+          </div>
 
+          <div class="col-sm-12 col-md-4 text-center py-5">
+            <%= image_tag 'egg.jpg', size: '250x250' %>
+            <h2 class="my-4">Sentiment</h2>
+            <p>感情を見よう<br>
+              あなたの言葉を分析します。<br>
+              どんな感情になっているでしょうか？
+            </p>
+          </div>
+
+          <div class="col-sm-12 col-md-4 text-center py-5">
+            <%= image_tag 'pc.jpg', size: '250x250' %> <h2 class="my-4">Board</h2>
+            <p>共有しよう<br>
+              自分の分析結果を<br>
+              掲示板で意見交換してみましょう。
+            </p>
+          </div>
+
+        </div>
+        <div class="row justify-content-center pt-3 pb-5">
+        </div>
       </div>
-      <div class="row justify-content-center pt-3 pb-5">
-      </div>
-    </div>
-  </main>
+    </main>
   </body>
 </html>
