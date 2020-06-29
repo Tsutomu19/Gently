@@ -12,25 +12,25 @@
       <div class="row align-items-center py-3">
         <div class="col-12 col-md-12 text-center">
           <h1><%= @emoji %></h1>
-                <%= @post.body %>
-                <% if @user.id == current_user.id %>　
-                    <%= link_to "edit", edit_post_path(@post.id) %>
-                    <%= link_to "destroy", post_path(@post), method: :delete, data: {confirm: "本当に削除してよろしいですか？"} %>
+            <%= @post.body %>
+            <% if @user.id == current_user.id %>　
+                <%= link_to "edit", edit_post_path(@post.id) %>
+                <%= link_to "destroy", post_path(@post), method: :delete, data: {confirm: "本当に削除してよろしいですか？"} %>
+            <% end %>
+            <h3>コメント一覧</h3>
+            <% @comments.each do |comment| %>
+            <%= comment.user.name %>
+            <%= comment.body %>
+                <% if comment.user_id == current_user.id %>
+                <%= link_to "Destroy",post_comment_path(comment.post_id,comment.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} %>
                 <% end %>
-                <h3>コメント一覧</h3>
-                <% @comments.each do |comment| %>
-                <%= comment.user.name %>
-                <%= comment.body %>
-                    <% if comment.user_id == current_user.id %>
-                    <%= link_to "Destroy",post_comment_path(comment.post_id,comment.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} %>
-                    <% end %>
-                <% end %>
-                <h3>新規コメント</h3>
-                <%= form_for [@post, @comment] do |f| %>
-                    <%= f.text_area :body, rows:'5',placeholder: "コメントをここに", :size => "70*70" %>
-                    <%= f.submit "送信" %>
-                <% end %>
-                    <div class="text-left pt-3">
+            <% end %>
+            <h3>新規コメント</h3>
+            <%= form_for [@post, @comment] do |f| %>
+                <%= f.text_area :body, rows:'5',placeholder: "コメントをここに", :size => "70*70" %>
+                <%= f.submit "送信" %>
+            <% end %>
+            <div class="text-left pt-3">
         </div>
       </div>
     </div>
