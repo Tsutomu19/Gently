@@ -1,47 +1,27 @@
 <section id="si">
-      <div class= "container about-visual">
-      </div>
-    </section>
-    <div class="container py-5">
-      <div class="row justify-content-center py-5">
-        <h1 class="service-content">投稿一覧</h1>
-      </div>
-  </main>
-
+  <div class= "container about-visual"></div>
+</section>
+  <div class="container py-5">
+    <div class="row justify-content-center py-5">
+      <h1 class="service-content">投稿一覧</h1>
+    </div>
+  </div>
 <table>
-    <thead>
-        <tr>
-            <th>name</th>
-            <th>Title</th>
-            <th>Opinion</th>
-            <th colspan="2"></th>
-        </tr>
-    </thead>
-
-    <% @posts.each do |post|%>
-
-    <tbody>
-        <td>
-        <%= link_to post.user.name, user_path(post.user.id) %>
-        </td>
-
-        <td>
-        <%= link_to post.title, post_path(post.id) %>
-        </td>
-
-        <td>
-        <%= post.body %>
-        </td>
-
-        <td id="favorite-<%= post.id %>">
-        <%= render partial: "favorites/favorite", locals: { post: post} %>
-        </td>
-
-        <td>
-        <span>コメント数: </span><%= post.comments.count %>
-        </td>
-    </tbody>
-
-    <% end %>
-
+  <thead>
+      <tr>
+        <th>name</th>
+        <th>Title</th>
+        <th>Opinion</th>
+        <th colspan="2"></th>
+      </tr>
+  </thead>
+  <% @posts.each do |post|%>
+  <tbody>
+      <td><%= link_to post.user.name, user_path(post.user.id) %></td>
+      <td><%= link_to post.title, post_path(post.id) %></td>
+      <td><%= post.body %></td>
+      <td id="favorite-<%= post.id %>"><%= render partial: "favorites/favorite", locals: { post: post} %></td>
+      <td><span>コメント数: </span><%= post.comments.count %></td>
+  </tbody>
+  <% end %>
 </table>
