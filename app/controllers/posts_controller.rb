@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     if post.save
       redirect_to post_path(post.id)
     else
-      @post = Post.new(post_params)
+      @post = Post.new(post_params)# 直前の編集内容を表示
       render 'new'
     end
   end
